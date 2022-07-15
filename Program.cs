@@ -9,9 +9,9 @@ namespace WebbedAudio_AIP__Application_In_Parts_
     {
         static void Main(string[] args)
         {
-            string url = "https://www.youtube.com/"; //make possible to input multiple links
-            string downloadFolder = @"C:\Users\hugok\source\repos\WebbedAudio AIP (Application In Parts)\Downloads\";
-            List<Tuple<string, int>> subsites = Scraper.GetSubsites(url);
+            string url = "https://goldenaudiobooks.com/markus-zusak-the-book-thief-audiobook/"; //make possible to input multiple links. On hold, multiple links can be queued for download by the planned async.
+            string downloadFolder = @"C:\Users\hugok\Desktop\Webbed-Audio-AIP\Downloads\"; //Download folder should be pickable by the file xplorer.
+            List<Tuple<string, int>> subsites = Scraper.GetSubsites(url); 
            
             subsites.Insert(0, new Tuple<string, int>(url, subsites.Count)); //inserts first url because GetSubsites() only gets subsites, not og site
             subsites = subsites.OrderBy(x => x.Item2).ToList(); //sorts list by Item 2 (site number)
