@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading;
 
@@ -10,7 +11,9 @@ namespace WebbedAudio_AIP__Application_In_Parts_
         static void Main(string[] args)
         {
             string url = "https://goldenaudiobooks.com/markus-zusak-the-book-thief-audiobook/"; //make possible to input multiple links. On hold, multiple links can be queued for download by the planned async.
-            string downloadFolder = @"C:\Users\hugok\Desktop\Webbed-Audio-AIP\Downloads\"; //Download folder should be pickable by the file xplorer.
+
+            string currentProjFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string downloadFolder = @$"{currentProjFolder}\Downloads\"; //Download folder should be pickable by the file xplorer and relative.
 
             scrape(url, downloadFolder);
 
