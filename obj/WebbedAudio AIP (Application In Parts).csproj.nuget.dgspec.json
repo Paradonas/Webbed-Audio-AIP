@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hugok\\Desktop\\Webbed-Audio-aip\\WebbedAudio AIP (Application In Parts).csproj": {}
+    "C:\\Users\\hugok\\Desktop\\Webbed-Audio-AIP\\WebbedAudio AIP (Application In Parts).csproj": {}
   },
   "projects": {
-    "C:\\Users\\hugok\\Desktop\\Webbed-Audio-aip\\WebbedAudio AIP (Application In Parts).csproj": {
+    "C:\\Users\\hugok\\Desktop\\Webbed-Audio-AIP\\WebbedAudio AIP (Application In Parts).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hugok\\Desktop\\Webbed-Audio-aip\\WebbedAudio AIP (Application In Parts).csproj",
+        "projectUniqueName": "C:\\Users\\hugok\\Desktop\\Webbed-Audio-AIP\\WebbedAudio AIP (Application In Parts).csproj",
         "projectName": "WebbedAudio AIP (Application In Parts)",
-        "projectPath": "C:\\Users\\hugok\\Desktop\\Webbed-Audio-aip\\WebbedAudio AIP (Application In Parts).csproj",
+        "projectPath": "C:\\Users\\hugok\\Desktop\\Webbed-Audio-AIP\\WebbedAudio AIP (Application In Parts).csproj",
         "packagesPath": "C:\\Users\\hugok\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hugok\\Desktop\\Webbed-Audio-aip\\obj\\",
+        "outputPath": "C:\\Users\\hugok\\Desktop\\Webbed-Audio-AIP\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
