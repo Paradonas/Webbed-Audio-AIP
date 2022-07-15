@@ -5,6 +5,7 @@ using ScrapySharp.Extensions;
 using HtmlAgilityPack;
 using System.Net;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace WebbedAudio_AIP__Application_In_Parts_
 {
@@ -40,6 +41,26 @@ namespace WebbedAudio_AIP__Application_In_Parts_
                 subsites.Add(new Tuple<string, int>(link, numbSubsites));
                 numbSubsites++;
             }
+
+            return subsites;
+        }
+
+        public static List<Tuple<string, int>> GetSubsitesAsync(string url)
+        {
+            var doc = new HtmlDocument();
+            doc.LoadHtml(GetSiteHtml(url));
+
+            List<Tuple<string, int>> subsites = new List<Tuple<string, int>>();
+            int numbSubsites = 0;
+
+            var mediaElementNodes = doc.DocumentNode.CssSelect("div.page-links > a");
+
+            Parallel.ForEach<HtmlNode>(mediaElementNodes, (mediaNode) =>
+            {
+                string link = mediaNode.Attributes["href"].Value;
+                subsites.Add(new Tuple<string, int>(link, numbSubsites));
+                numbSubsites++;
+            });
 
             return subsites;
         }

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace WebbedAudio_AIP__Application_In_Parts_
 {
@@ -22,8 +24,14 @@ namespace WebbedAudio_AIP__Application_In_Parts_
 
         static void scrape(string url, string downloadFolder)
         {
+            var watch = Stopwatch.StartNew();
+
             List<Tuple<string, int>> subsites = Scraper.GetSubsites(url);
            
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+            Console.WriteLine($"Subsite acquire time: {elapsedMs}ms");
+
             subsites.Insert(0, new Tuple<string, int>(url, subsites.Count)); //inserts first url because GetSubsites() only gets subsites, not og site
             subsites = subsites.OrderBy(x => x.Item2).ToList(); //sorts list by Item 2 (site number)
 
